@@ -8,15 +8,20 @@
 </head>
 <body>
     <h1>Convert your files to data urls</h1>
-    <input type="file" onchange>
+    <input type="file">
+    <button>copy to clipboard</button>
+    <a style="overflow-wrap: break-word;"></a>
     <script>
-        const file = document.querySelector("input");
-        file.onchange = function(){
+        const a = document.querySelector("a");
+        document.querySelector('input').onchange = function(){
             var reader = new FileReader();
-            reader.readAsDataURL(file.files[0]);
+            reader.readAsDataURL(this.files[0]);
             reader.onload = function(){
-                alert(this.result);
+                a.href = a.innerHTML = this.result;
             }
+        }
+        document.querySelector("button").onclick = function(){
+            navigator.clipboard.writeText(a.href);
         }
     </script>
 </body>
