@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./file2data.css"/>
+    <style>
+    </style>
     <title>file2data</title>
-</head>
-<body>
-    <h1>Convert your files to data urls</h1>
-    <input type="file">
-    <button>copy to clipboard</button>
-    <a style="overflow-wrap: break-word;"></a>
-    <script>
-        const a = document.querySelector("a");
-        document.querySelector('input').onchange = function(){
-            var reader = new FileReader();
-            reader.readAsDataURL(this.files[0]);
-            reader.onload = function(){
-                a.href = a.innerHTML = this.result;
-            }
-        }
-        document.querySelector("button").onclick = function(){
-            navigator.clipboard.writeText(a.href);
-        }
-    </script>
-</body>
+  </head>
+  <body>
+    <input id="file" type="file" style="display: none" onchange="handleFileInput(this.files[0])"/>
+    <label for="file"><div class="dropzone-container"><div class="dropzone"></div></div></label>
+    <div class="dataURL">
+      <p>Data URL:</p>
+      <p class="url"><span style="color: lightgray; font-family: sans-serif">Your url will appear here</span></p>
+      <p style="float:right">
+        <button id="copybtn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+            ></path>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+          </svg>
+          <span>Copy to clipboard</span>
+        </button>
+        <button id="newtab">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M14 6L6 6L6 18L18 18 L18 10"></path>
+            <path d="M12 12L22 2L22 10M22 2L14 2"></path>
+          </svg>
+          <span>Open in new tab</span>
+        </button>
+      </p>
+    </div>
+    <script src="./file2data.js"></script>
+  </body>
 </html>

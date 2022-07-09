@@ -1,0 +1,84 @@
+:root {
+  --theme-color-light: #3d5afe;
+  --theme-color: #364fe1;
+  --theme-color-dark: #2039c8;
+  font-family: sans-serif; 
+}
+
+.dropzone-container {
+  margin: 2rem;
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dropzone {
+  border: none;
+  padding: 2rem;
+  border-radius: 10px;
+  font-family: Arial;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.dropzone::after {
+  content: "Drag and drop or select a file";
+}
+
+.dataURL {
+  border: 1px solid lightgray;
+  padding: 2rem;
+  padding-bottom: .1rem;
+  margin: 2rem;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.dataURL::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.dataURL > .url {
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.fileover {
+  border-style: dashed;
+}
+
+.fileover::after {
+  font-size: 1.2rem;
+  content: "Drop file here";
+}
+
+.url {
+  font-family: JetBrains Mono, monospace
+}
+
+button {
+  background-color: var(--theme-color-light);
+  border: none;
+  color: white;
+  padding: 5px 7px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--theme-color);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+button:active {
+  background-color: var(--theme-color-dark);
+}
+
+span {
+  margin-left: 5px;
+}
