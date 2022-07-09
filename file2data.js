@@ -9,7 +9,7 @@ document.addEventListener("dragover", (event) => {
   dropzone.classList.add("fileover");
 });
 
-dropzone.addEventListener("dragleave", (event) => {
+document.addEventListener("dragleave", (event) => {
   event.target.classList.remove("fileover");
 });
 
