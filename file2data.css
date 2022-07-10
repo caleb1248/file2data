@@ -26,6 +26,16 @@
   content: "Drag and drop or select a file";
 }
 
+.fileover {
+  border-style: dashed;
+}
+
+.fileover::after {
+  font-size: 1.2rem;
+  content: "Drop file here";
+}
+
+
 .dataURL {
   border: 1px solid lightgray;
   padding: 2rem;
@@ -44,19 +54,9 @@
 .dataURL > .url {
   text-align: center;
   word-wrap: break-word;
-}
-
-.fileover {
-  border-style: dashed;
-}
-
-.fileover::after {
-  font-size: 1.2rem;
-  content: "Drop file here";
-}
-
-.url {
-  font-family: JetBrains Mono, monospace
+  font-family: JetBrains Mono, monospace;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 button {
