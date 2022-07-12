@@ -5,29 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      @media (prefers-color-scheme: light) {
-        body {
-          background-color: white;
-          color: black;
-        }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: black;
-          color: white;
-        }
-      }
-    </style>
-  </head>
   <body>
     <input type="file" id="file"/>
     <p>Data url:</p>
     <textarea rows="8" cols="50" id="result" style="overflow-wrap: break-word;"></textarea>
     <script>
       document.getElementById('file').onchange = function(e) {
-        fetch("/", {
+        fetch("/api", {
           method: "POST",
           body: e.target.files[0]
         }).then(res => res.text()).then(res => {

@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/file2data.css">
   <title>Document</title>
 </head>
 <body>
-  <h1>The api</h1>
-  <p>usage</p>
+  <p style="font-size: 2rem">The api</p>
+  <p>Usage</p>
   <pre>
     <code>
-      fetch("https://file2data.herokuapp.com/api", {
-        method: "POST",
-        body: file
-      }).then(res => res.text()).then(res => {
-        document.getElementById('result').value = res;
-      });
+fetch("https://file2data.herokuapp.com/api", {
+  method: "POST",
+  body: file
+}).then(res => res.text()).then(res => {
+  document.getElementById('result').value = res;
+});
     </code>
   </pre>
-  Example <a href="https://file2data.herokuapp.com/api/post.html">here</a>
+  Example <a href="./post.html">here</a>
 </body>
 </html>

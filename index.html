@@ -11,10 +11,21 @@
     <link rel="stylesheet" href="./file2data.css"/>
     <style>
     </style>
-    <title>file2data</title>
+    <title>File2data</title>
   </head>
   <body>
-    <input id="file" type="file" style="display: none" onchange="handleFileInput(this.files[0])"/>
+    <nav>
+      <span class="title">File2data</span>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="./api">API</a>
+        </li>
+      </ul>
+    </nav>
+    <input id="file" type="file" onchange="handleFileInput(this.files[0])"/>
     <label for="file"><div class="dropzone-container"><div class="dropzone"></div></div></label>
     <div class="dataURL">
       <p>Data URL:</p>
